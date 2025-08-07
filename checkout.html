@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Checkout</h1>
+
+  <section class="checkout">
+    <form>
+      <h3>Shipping Information</h3>
+      <input type="text" placeholder="Full Name" required />
+      <input type="text" placeholder="Address" required />
+      <input type="text" placeholder="City" required />
+      <input type="text" placeholder="Zip Code" required />
+
+      <h3>Order Summary</h3>
+      <div id="orderSummary"></div>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+    if (product) {
+      document.getElementById("orderSummary").innerHTML = `
+        <p>Product: ${product.name}</p>
+        <p>Price: $${product.price}</p>
+        <p>Total: $${product.price}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

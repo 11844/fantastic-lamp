@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalogue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Product Catalogue</h1>
+
+  <section class="filters">
+    <label>Category:
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="books">Books</option>
+      </select>
+    </label>
+
+    <label>Max Price:
+      <input type="number" id="priceFilter" />
+    </label>
+
+    <label>Min Rating:
+      <select id="ratingFilter">
+        <option value="0">Any</option>
+        <option value="3">3★ & up</option>
+        <option value="4">4★ & up</option>
+        <option value="5">5★ only</option>
+      </select>
+    </label>
+
+    <button onclick="applyFilters()">Filter</button>
+  </section>
+
+  <section id="productList" class="products"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
